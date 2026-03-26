@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cynthia Maretta | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2A4A;--blue:#3B82F6;--blue-light:#DBEAFE;--teal:#0D9488;--teal-light:#CCFBF1;--dark:#0F172A;--text:#334155;--text-light:#64748B;--bg:#FAFBFC;--white:#FFFFFF;--card:#FFFFFF;--border:#E2E8F0;--accent:#F59E0B}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);padding:.8rem 0}
+nav .container{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'DM Serif Display',serif;color:var(--white);font-size:1.3rem;text-decoration:none}nav .logo span{color:var(--blue)}
+nav ul{list-style:none;display:flex;gap:2rem}nav a{color:#94A3B8;text-decoration:none;font-size:.85rem;font-weight:500;transition:color .3s}nav a:hover{color:var(--white)}
+.hero{background:var(--dark);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:4rem}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(59,130,246,.12) 0%,transparent 70%);border-radius:50%}
+.hero .container{max-width:1100px;margin:0 auto;padding:0 2rem;position:relative;z-index:1;display:flex;align-items:center;gap:4rem}
+.hero-content{flex:1}
+.hero-photo .placeholder{width:280px;height:280px;border-radius:20px;background:rgba(59,130,246,.1);border:2px dashed rgba(59,130,246,.3);display:flex;align-items:center;justify-content:center;color:#64748B;font-size:.8rem;text-align:center;padding:1rem}
+.hero-photo img{width:280px;height:280px;border-radius:20px;object-fit:cover;border:3px solid rgba(59,130,246,.3)}
+.hero .label{display:inline-block;background:rgba(59,130,246,.15);color:var(--blue);padding:.4rem 1rem;border-radius:20px;font-size:.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.5rem;animation:fadeInUp .8s ease}
+.hero h1{font-family:'DM Serif Display',serif;color:var(--white);font-size:3.2rem;line-height:1.15;margin-bottom:1.2rem;animation:fadeInUp .8s ease .1s both}
+.hero h1 em{color:var(--blue);font-style:normal}
+.hero p{color:#94A3B8;font-size:1.05rem;line-height:1.7;margin-bottom:2rem;animation:fadeInUp .8s ease .2s both}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.6rem;animation:fadeInUp .8s ease .3s both}
+.hero-tags span{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#CBD5E1;padding:.35rem .9rem;border-radius:6px;font-size:.8rem;font-weight:500}
+.hero-stats{display:flex;gap:3rem;margin-top:3rem;animation:fadeInUp .8s ease .4s both}
+.hero-stats .stat-num{font-family:'DM Serif Display',serif;color:var(--white);font-size:2.2rem}
+.hero-stats .stat-label{color:#64748B;font-size:.8rem;font-weight:500;margin-top:.2rem}
+section{padding:5rem 0}.container{max-width:1100px;margin:0 auto;padding:0 2rem}
+.section-label{display:inline-block;background:var(--blue-light);color:var(--blue);padding:.3rem .8rem;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem}
+.section-title{font-family:'DM Serif Display',serif;color:var(--navy);font-size:2.2rem;margin-bottom:.8rem}
+.section-desc{color:var(--text-light);font-size:1rem;margin-bottom:3rem;max-width:600px}
+.projects-grid{display:flex;flex-direction:column;gap:2.5rem}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:pointer}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
+.project-top{display:grid;grid-template-columns:1fr 1fr}
+.project-info{padding:2.5rem;display:flex;flex-direction:column;justify-content:center}
+.project-tag{display:inline-block;width:fit-content;padding:.25rem .7rem;border-radius:4px;font-size:.7rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:1rem}
+.tag-audit{background:rgba(239,68,68,.1);color:#DC2626}.tag-data{background:rgba(59,130,246,.1);color:#2563EB}.tag-leadership{background:rgba(245,158,11,.1);color:#D97706}.tag-teaching{background:rgba(13,148,136,.1);color:#0D9488}.tag-volunteer{background:rgba(139,92,246,.1);color:#7C3AED}.tag-community{background:rgba(139,92,246,.1);color:#7C3AED}
+.project-info h3{font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.5rem;margin-bottom:.5rem}
+.project-info .org{color:var(--text-light);font-size:.85rem;margin-bottom:1rem;font-weight:500}
+.project-info p{color:var(--text);font-size:.9rem;line-height:1.7;margin-bottom:1rem}
+.project-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.project-tools span{background:var(--bg);border:1px solid var(--border);padding:.2rem .6rem;border-radius:4px;font-size:.72rem;color:var(--text-light);font-weight:500}
+.click-hint{color:var(--blue);font-size:.8rem;font-weight:600;margin-top:1rem;display:flex;align-items:center;gap:.3rem}
+.project-visual{background:var(--navy);display:flex;align-items:center;justify-content:center;padding:2rem;min-height:300px;position:relative;overflow:hidden}
+.project-visual::before{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(59,130,246,.15) 0%,transparent 70%);border-radius:50%;top:-50px;right:-50px}
+.visual-content{position:relative;z-index:1;text-align:center}
+.visual-content .big-num{font-family:'DM Serif Display',serif;font-size:3.5rem;color:var(--white);line-height:1}
+.visual-content .big-label{color:#94A3B8;font-size:.85rem;margin-top:.5rem;font-weight:500}
+.visual-metrics{display:flex;gap:2rem;margin-top:1.5rem}
+.visual-metrics .vm{text-align:center}.visual-metrics .vm-num{color:var(--blue);font-size:1.4rem;font-weight:700}.visual-metrics .vm-label{color:#64748B;font-size:.7rem;margin-top:.2rem}
+.project-gallery{padding:1.2rem 2.5rem 2rem;border-top:1px solid var(--border)}
+.project-gallery h4{font-size:.8rem;color:var(--text-light);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:.8rem}
+.gallery-grid{display:flex;gap:.8rem;overflow-x:auto;padding-bottom:.5rem}
+.gallery-grid img{width:180px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--border);flex-shrink:0}
+.gallery-grid .ph{width:180px;height:120px;border-radius:8px;background:var(--bg);border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:.65rem;text-align:center;flex-shrink:0;padding:.5rem}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:flex-start;padding:2rem;overflow-y:auto;backdrop-filter:blur(4px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);border-radius:16px;max-width:900px;width:100%;max-height:none;overflow:visible;position:relative;animation:modalIn .3s ease;margin:2rem auto}
+@keyframes modalIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:1rem;right:1rem;background:var(--navy);color:var(--white);border:none;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.modal-close:hover{background:var(--blue)}
+.modal-header{background:var(--navy);padding:2.5rem;border-radius:16px 16px 0 0;position:relative;overflow:hidden}
+.modal-header::before{content:'';position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(59,130,246,.15) 0%,transparent 70%);border-radius:50%;top:-200px;right:-100px}
+.modal-header .project-tag{margin-bottom:.8rem}
+.modal-header h2{font-family:'DM Serif Display',serif;color:var(--white);font-size:2rem;margin-bottom:.3rem;position:relative}
+.modal-header .org{color:#94A3B8;font-size:.9rem;position:relative}
+.modal-body{padding:2.5rem}
+.modal-body h3{font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.3rem;margin:1.5rem 0 .8rem;padding-bottom:.4rem;border-bottom:2px solid var(--blue-light)}
+.modal-body h3:first-child{margin-top:0}
+.modal-body p{color:var(--text);font-size:.92rem;line-height:1.8;margin-bottom:.8rem}
+.modal-body ul{list-style:none;padding:0;margin-bottom:1rem}
+.modal-body li{padding:.4rem 0 .4rem 1.2rem;position:relative;font-size:.9rem;color:var(--text)}
+.modal-body li::before{content:'';position:absolute;left:0;top:.75rem;width:6px;height:6px;background:var(--blue);border-radius:50%}
+.modal-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.5rem 0}
+.modal-kpi{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center}
+.modal-kpi .num{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--navy)}
+.modal-kpi .lbl{font-size:.75rem;color:var(--text-light);margin-top:.2rem}
+.modal-actions{display:flex;gap:.8rem;margin:1.5rem 0;flex-wrap:wrap}
+.modal-gallery{display:flex;gap:.8rem;overflow-x:auto;padding:.5rem 0}
+.modal-gallery img{width:220px;height:150px;object-fit:cover;border-radius:8px;border:1px solid var(--border);flex-shrink:0}
+.modal-gallery .ph{width:220px;height:150px;border-radius:8px;background:var(--bg);border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:.7rem;text-align:center;flex-shrink:0;padding:.5rem}
+.modal-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0}
+.modal-tools span{background:var(--blue-light);color:var(--blue);padding:.3rem .8rem;border-radius:5px;font-size:.78rem;font-weight:600}
+
+/* SKILLS */
+.skills-section{background:var(--dark);padding:5rem 0}.skills-section .section-label{background:rgba(59,130,246,.2)}.skills-section .section-title{color:var(--white)}.skills-section .section-desc{color:#94A3B8}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.skill-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.8rem;transition:background .3s}.skill-card:hover{background:rgba(255,255,255,.08)}
+.skill-card h4{color:var(--white);font-size:1rem;margin-bottom:.8rem;font-weight:600}
+.skill-card .skill-items{display:flex;flex-wrap:wrap;gap:.4rem}.skill-card .skill-items span{background:rgba(59,130,246,.12);color:#93C5FD;padding:.25rem .6rem;border-radius:4px;font-size:.75rem;font-weight:500}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2.5rem;display:flex;gap:2rem;align-items:flex-start}
+.edu-badge{background:var(--navy);color:var(--white);min-width:80px;height:80px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700}
+.edu-badge .year{font-size:1.1rem}.edu-badge .dash{font-size:.7rem;color:#94A3B8}
+.edu-info h3{font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.4rem;margin-bottom:.3rem}
+.edu-info .degree{color:var(--blue);font-weight:600;font-size:.9rem;margin-bottom:.5rem}
+.edu-info p{color:var(--text-light);font-size:.88rem;margin-bottom:.3rem}
+.edu-info .gpa{display:inline-block;background:var(--teal-light);color:var(--teal);padding:.2rem .7rem;border-radius:4px;font-weight:700;font-size:.8rem;margin-top:.5rem}
+.contact-section{background:var(--navy);padding:4rem 0;text-align:center}
+.contact-section h2{font-family:'DM Serif Display',serif;color:var(--white);font-size:2rem;margin-bottom:1rem}
+.contact-section p{color:#94A3B8;margin-bottom:2rem}
+.contact-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.contact-links a{color:var(--white);text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.6rem 1.5rem;border-radius:8px;font-size:.85rem;font-weight:500;transition:all .3s}
+.contact-links a:hover{background:var(--blue);border-color:var(--blue)}
+footer{background:var(--dark);padding:1.5rem 0;text-align:center}footer p{color:#475569;font-size:.75rem}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.hero .container{flex-direction:column-reverse;text-align:center}.hero h1{font-size:2.2rem}.hero-stats{gap:1.5rem;justify-content:center;flex-wrap:wrap}.hero-tags{justify-content:center}.hero-photo .placeholder,.hero-photo img{width:200px;height:200px}.project-top{grid-template-columns:1fr}.project-visual{min-height:200px}.skills-grid{grid-template-columns:1fr}nav ul{display:none}.edu-card{flex-direction:column}.modal-kpis{grid-template-columns:repeat(2,1fr)}.modal{margin:1rem}}
+</style>
+</head>
+<body>
+
+<nav><div class="container"><a href="#" class="logo">Cynthia<span>.</span></a><ul><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<section class="hero"><div class="container">
+<div class="hero-content">
+<div class="label">Data Analyst &bull; Audit &bull; Mathematics</div>
+<h1>Hi, I'm <em>Cynthia Maretta</em></h1>
+<p>Final-year Mathematics student at Gadjah Mada University with hands-on experience in audit quality assurance at FIFGROUP (Astra Group) and statistical data analysis at BPS. I turn complex data into actionable insights.</p>
+<div class="hero-tags"><span>Python</span><span>SQL</span><span>R</span><span>Excel (Advanced)</span><span>Data Visualization</span><span>Quality Assurance</span><span>Regression Analysis</span></div>
+<div class="hero-stats"><div><div class="stat-num">3.53</div><div class="stat-label">GPA / 4.00</div></div><div><div class="stat-num">94</div><div class="stat-label">Networks Audited</div></div><div><div class="stat-num">81</div><div class="stat-label">Team Members Led</div></div><div><div class="stat-num">64</div><div class="stat-label">Initiatives Managed</div></div></div>
+</div>
+<div class="hero-photo">
+<div class="placeholder">Replace with your profile photo<br><br>assets/photos/profile.jpg</div>
+<!-- <img src="assets/photos/profile.jpg" alt="Cynthia Maretta"> -->
+</div>
+</div></section>
+
+<section id="projects"><div class="container">
+<div class="section-label">Portfolio</div>
+<h2 class="section-title">Featured Projects</h2>
+<p class="section-desc">Click any project to see full details, methodology, and documentation.</p>
+<div class="projects-grid">
+
+<!-- CARD 1: QA -->
+<div class="project-card fade-in" onclick="openModal('qa')">
+<div class="project-top">
+<div class="project-info">
+<div class="project-tag tag-audit">Audit &bull; Quality Assurance</div>
+<h3>Internal Audit QA Development</h3>
+<div class="org">FIFGROUP (Astra Group) &bull; Nov 2025 - Present</div>
+<p>Reviewed audit working papers across 94 networks and assessed report quality using the 5C framework. Identified gaps in over 40% of WPs.</p>
+<div class="project-tools"><span>Excel</span><span>5C Framework</span><span>IPPF 2017</span><span>GIAS 2024</span><span>PowerPoint</span></div>
+<div class="click-hint">&#10140; Click for full details</div>
+</div>
+<div class="project-visual"><div class="visual-content"><div class="big-num">94</div><div class="big-label">Branch Networks Reviewed</div><div class="visual-metrics"><div class="vm"><div class="vm-num">8</div><div class="vm-label">Scopes</div></div><div class="vm"><div class="vm-num">4</div><div class="vm-label">Months</div></div><div class="vm"><div class="vm-num">5C</div><div class="vm-label">Framework</div></div></div></div></div>
+</div></div>
+
+<!-- CARD 2: BPS -->
+<div class="project-card fade-in" onclick="openModal('bps')">
+<div class="project-top">
+<div class="project-visual" style="order:-1;background:#0C4A6E"><div class="visual-content"><div class="big-num">13</div><div class="big-label">Districts Analyzed</div><div class="visual-metrics"><div class="vm"><div class="vm-num">11yr</div><div class="vm-label">Data</div></div><div class="vm"><div class="vm-num">MLR</div><div class="vm-label">Method</div></div></div></div></div>
+<div class="project-info">
+<div class="project-tag tag-data">Data Analysis &bull; Statistical Modeling</div>
+<h3>HDI Regression Analysis</h3>
+<div class="org">BPS Yogyakarta &bull; Jan - Feb 2025</div>
+<p>Built a multiple linear regression model analyzing HDI predictors in Yogyakarta. Found education duration was a stronger predictor than economic growth.</p>
+<div class="project-tools"><span>SQL</span><span>Excel</span><span>Linear Regression</span><span>Data Visualization</span></div>
+<div class="click-hint">&#10140; Click for full details</div>
+</div>
+</div></div>
+
+<!-- CARD 3: HIMATIKA -->
+<div class="project-card fade-in" onclick="openModal('himatika')">
+<div class="project-top">
+<div class="project-info">
+<div class="project-tag tag-leadership">Leadership &bull; Management</div>
+<h3>President of HIMATIKA UGM</h3>
+<div class="org">Mathematics Student Association &bull; Dec 2023 - Dec 2024</div>
+<p>Led 81 members, managed 64 initiatives with structured planning, budget oversight, and cross-team coordination.</p>
+<div class="project-tools"><span>Leadership</span><span>Budget Management</span><span>Public Speaking</span><span>Event Coordination</span></div>
+<div class="click-hint">&#10140; Click for full details</div>
+</div>
+<div class="project-visual" style="background:#1E3A5F"><div class="visual-content"><div class="big-num">81</div><div class="big-label">Team Members Led</div><div class="visual-metrics"><div class="vm"><div class="vm-num">64</div><div class="vm-label">Initiatives</div></div><div class="vm"><div class="vm-num">80%+</div><div class="vm-label">Participation</div></div></div></div></div>
+</div></div>
+
+<!-- CARD 4: TUTORING -->
+<div class="project-card fade-in" onclick="openModal('tutor')">
+<div class="project-top">
+<div class="project-visual" style="order:-1;background:#0F4C5C"><div class="visual-content"><div class="big-num">90+</div><div class="big-label">Avg Assessment Score</div><div class="visual-metrics"><div class="vm"><div class="vm-num">20+</div><div class="vm-label">Students</div></div></div></div></div>
+<div class="project-info">
+<div class="project-tag tag-teaching">Teaching &bull; Data-Driven</div>
+<h3>Mathematics Tutor</h3>
+<div class="org">iStudy Indonesia &bull; Jun 2024 - Present</div>
+<p>Data-informed learning plans for 20+ students, driving consistent 90+ scores through performance tracking.</p>
+<div class="click-hint">&#10140; Click for full details</div>
+</div>
+</div></div>
+
+<!-- CARD 5: VOLUNTEERING -->
+<div class="project-card fade-in" onclick="openModal('volunteer')">
+<div class="project-top">
+<div class="project-info">
+<div class="project-tag tag-volunteer">Volunteering &bull; Community</div>
+<h3>Volunteering & Community Service</h3>
+<div class="org">Multiple Events &bull; 2025</div>
+<p>Active in community service and event volunteering: KKN Papua (5 programs), Tur Sama-Sama 2025, and Yogyakarta X Beauty 2025.</p>
+<div class="project-tools"><span>Community Service</span><span>Event Management</span><span>Partnership</span><span>Teaching</span></div>
+<div class="click-hint">&#10140; Click for full details</div>
+</div>
+<div class="project-visual" style="background:#3B1F6E"><div class="visual-content"><div class="big-num" style="font-size:2.5rem">3 Events</div><div class="big-label">KKN Papua &bull; Tur Sama-Sama &bull; YXB</div><div class="visual-metrics"><div class="vm"><div class="vm-num">5</div><div class="vm-label">KKN Programs</div></div><div class="vm"><div class="vm-num">300+</div><div class="vm-label">VIP Guests</div></div><div class="vm"><div class="vm-num">63</div><div class="vm-label">Media Partners</div></div></div></div></div>
+</div></div>
+
+</div></div></section>
+
+<!-- MODALS -->
+
+<!-- QA MODAL -->
+<div class="modal-overlay" id="modal-qa" onclick="if(event.target===this)closeModal('qa')">
+<div class="modal">
+<button class="modal-close" onclick="closeModal('qa')">&times;</button>
+<div class="modal-header">
+<div class="project-tag tag-audit">Audit &bull; Quality Assurance</div>
+<h2>Internal Audit QA Development</h2>
+<div class="org">FIFGROUP (Astra Group) &bull; Nov 2025 - Present</div>
+</div>
+<div class="modal-body">
+<div class="modal-kpis">
+<div class="modal-kpi"><div class="num">94</div><div class="lbl">Networks Reviewed</div></div>
+<div class="modal-kpi"><div class="num">8</div><div class="lbl">Audit Scopes</div></div>
+<div class="modal-kpi"><div class="num">4</div><div class="lbl">Months Coverage</div></div>
+<div class="modal-kpi"><div class="num">40%+</div><div class="lbl">Gap Rate Found</div></div>
+</div>
+<h3>Overview</h3>
+<p>Conducted Quality Assurance review of audit working papers and reports across FIFGROUP's nationwide branch network, assessing compliance with IPPF 2017 and GIAS 2024 standards.</p>
+<h3>Methodology</h3>
+<p><strong>Working Paper Review:</strong> Evaluated documentation using a 3-tier scoring system (Ada-Valid / Ada-Tidak Valid / Tidak Ada) across Desk Audit and Field Audit phases for 8 scope areas: Marketing, Credit, Collateral & Fiduciary, Collection & Remedial, Inventory & Warehouse, Finance, Sales & Partnership, and Human Capital & General Service.</p>
+<p><strong>Audit Report Review:</strong> Assessed report quality using the 5C framework (Administrative, Clear, Complete, Concise, Consistent) on a 1-4 scale, evaluating 5W+2H completeness, narrative clarity, and evidence adequacy.</p>
+<h3>Key Findings</h3>
+<ul>
+<li>Over 40% of both desk and field audit WPs contained documentation gaps including mismatched branch headers, missing sample lists, and insufficient data analysis</li>
+<li>Significant reporting gaps in Completeness and Conciseness dimensions across all reviewed months</li>
+<li>Common root causes: lack of detailed SOP for audit deliverables and inconsistent ongoing monitoring</li>
+</ul>
+<h3>Deliverables</h3>
+<ul>
+<li>Monthly QA results reports (Aug-Nov 2025) with per-scope and per-project breakdown</li>
+<li>Per-auditor performance recaps with targeted feedback</li>
+<li>GIAS 2024 compliance mapping diagram</li>
+<li>Management-ready consolidated QA report with findings and recommendations</li>
+</ul>
+<div class="modal-actions">
+<!-- GANTI # dengan Google Drive links -->
+<a href="#" class="btn btn-primary" target="_blank">&#128196; View QA Report (PDF)</a>
+<a href="#" class="btn btn-outline" target="_blank">&#128202; View Excel Dashboard</a>
+</div>
+<div class="modal-tools"><span>Microsoft Excel</span><span>5C Framework</span><span>IPPF 2017</span><span>GIAS 2024</span><span>Data Validation</span><span>PowerPoint</span><span>VPN Access</span></div>
+<h3>Documentation</h3>
+<div class="modal-gallery">
+<div class="ph">FIF Photo 1<br>assets/photos/fif-1.jpg</div>
+<div class="ph">FIF Photo 2<br>assets/photos/fif-2.jpg</div>
+<div class="ph">FIF Photo 3<br>assets/photos/fif-3.jpg</div>
+</div>
+</div></div></div>
+
+<!-- BPS MODAL -->
+<div class="modal-overlay" id="modal-bps" onclick="if(event.target===this)closeModal('bps')">
+<div class="modal">
+<button class="modal-close" onclick="closeModal('bps')">&times;</button>
+<div class="modal-header" style="background:#0C4A6E">
+<div class="project-tag tag-data">Data Analysis &bull; Statistical Modeling</div>
+<h2>HDI Regression Analysis</h2>
+<div class="org">BPS Kota Yogyakarta &bull; Jan - Feb 2025</div>
+</div>
+<div class="modal-body">
+<div class="modal-kpis">
+<div class="modal-kpi"><div class="num">13</div><div class="lbl">Districts</div></div>
+<div class="modal-kpi"><div class="num">11yr</div><div class="lbl">Data Range</div></div>
+<div class="modal-kpi"><div class="num">MLR</div><div class="lbl">Method</div></div>
+<div class="modal-kpi"><div class="num">3</div><div class="lbl">Variables</div></div>
+</div>
+<h3>Overview</h3>
+<p>Analyzed the influence of economic growth and education level on Human Development Index (HDI) in Kota Yogyakarta using official BPS data from 2014 to 2024.</p>
+<h3>Methodology</h3>
+<p><strong>Variables:</strong> Dependent: Human Development Index (IPM). Independent: GDP Growth Rate (Laju Pertumbuhan PDRB) and Average Years of Schooling (Rata-rata Lama Sekolah / RLS).</p>
+<p><strong>Analysis:</strong> Multiple Linear Regression model to measure the individual and combined effect of each predictor on HDI variation over the 11-year period.</p>
+<h3>Key Findings</h3>
+<ul>
+<li>Education duration (RLS) had a significant positive impact on HDI</li>
+<li>Economic growth (PDRB) showed no statistically significant effect on HDI</li>
+<li>The model suggests that investing in education yields stronger human development outcomes than economic growth alone</li>
+</ul>
+<h3>Other Contributions</h3>
+<ul>
+<li>Processed and validated socioeconomic datasets from 13 districts for "Kota Yogyakarta dalam Angka 2025"</li>
+<li>Designed data visualizations and publication layouts for non-technical government stakeholders</li>
+</ul>
+<div class="modal-actions">
+<a href="#" class="btn btn-primary" target="_blank">&#128196; View Full Report (PDF)</a>
+</div>
+<div class="modal-tools"><span>SQL</span><span>Microsoft Excel</span><span>Multiple Linear Regression</span><span>Data Visualization</span><span>Adobe InDesign</span><span>Statistical Analysis</span></div>
+<h3>Documentation</h3>
+<div class="modal-gallery">
+<div class="ph">BPS Photo 1<br>assets/photos/bps-1.jpg</div>
+<div class="ph">BPS Photo 2<br>assets/photos/bps-2.jpg</div>
+<div class="ph">BPS Photo 3<br>assets/photos/bps-3.jpg</div>
+</div>
+</div></div></div>
+
+<!-- HIMATIKA MODAL -->
+<div class="modal-overlay" id="modal-himatika" onclick="if(event.target===this)closeModal('himatika')">
+<div class="modal">
+<button class="modal-close" onclick="closeModal('himatika')">&times;</button>
+<div class="modal-header" style="background:#1E3A5F">
+<div class="project-tag tag-leadership">Leadership &bull; Management</div>
+<h2>President of HIMATIKA UGM</h2>
+<div class="org">Department-level Mathematics Student Association &bull; Dec 2023 - Dec 2024</div>
+</div>
+<div class="modal-body">
+<div class="modal-kpis">
+<div class="modal-kpi"><div class="num">81</div><div class="lbl">Team Members</div></div>
+<div class="modal-kpi"><div class="num">64</div><div class="lbl">Initiatives</div></div>
+<div class="modal-kpi"><div class="num">80%+</div><div class="lbl">Participation Rate</div></div>
+<div class="modal-kpi"><div class="num">1 yr</div><div class="lbl">Tenure</div></div>
+</div>
+<h3>Role & Responsibilities</h3>
+<p>Led 23 executives and 58 staff members responsible for academic, leadership, and talent development programs within the Mathematics department at UGM.</p>
+<h3>Key Achievements</h3>
+<ul>
+<li>Managed end-to-end execution of 64 organizational initiatives with on-time delivery</li>
+<li>Achieved 80%+ participation rates across major programs</li>
+<li>Applied structured planning, budget oversight, and performance monitoring</li>
+<li>Strengthened governance, cross-team coordination, and stakeholder collaboration</li>
+</ul>
+<h3>Skills Developed</h3>
+<p><strong>Leadership:</strong> Prioritized team well-being while fostering growth through trust and responsibility. Set clear goals aligned with shared vision, remaining flexible and open to feedback.</p>
+<p><strong>Public Speaking:</strong> Delivered engaging lessons, workshops, and presentations to large audiences. Adapted content in real-time based on audience reactions for effective communication.</p>
+<p><strong>Event Coordination:</strong> Crafted event concepts, structured detailed rundowns, and developed execution guidelines. Oversaw all stages from conceptualization to post-event evaluation.</p>
+<p><strong>Sponsorship:</strong> Leveraged strategic, research-based approach to secure sponsorships through persuasive communication and effective negotiation.</p>
+<div class="modal-tools"><span>Team Leadership</span><span>Budget Management</span><span>Public Speaking</span><span>Event Coordination</span><span>Sponsorship</span><span>Stakeholder Communication</span><span>Conflict Resolution</span></div>
+<h3>Documentation</h3>
+<div class="modal-gallery">
+<div class="ph">HIMATIKA Photo 1<br>assets/photos/himatika-1.jpg</div>
+<div class="ph">HIMATIKA Photo 2<br>assets/photos/himatika-2.jpg</div>
+<div class="ph">HIMATIKA Photo 3<br>assets/photos/himatika-3.jpg</div>
+<div class="ph">HIMATIKA Photo 4<br>assets/photos/himatika-4.jpg</div>
+</div>
+</div></div></div>
+
+<!-- TUTOR MODAL -->
+<div class="modal-overlay" id="modal-tutor" onclick="if(event.target===this)closeModal('tutor')">
+<div class="modal">
+<button class="modal-close" onclick="closeModal('tutor')">&times;</button>
+<div class="modal-header" style="background:#0F4C5C">
+<div class="project-tag tag-teaching">Teaching &bull; Data-Driven</div>
+<h2>Mathematics Tutor</h2>
+<div class="org">iStudy Indonesia &bull; Jun 2024 - Present</div>
+</div>
+<div class="modal-body">
+<div class="modal-kpis">
+<div class="modal-kpi"><div class="num">20+</div><div class="lbl">Students Taught</div></div>
+<div class="modal-kpi"><div class="num">90+</div><div class="lbl">Avg Score</div></div>
+<div class="modal-kpi"><div class="num">1.5yr+</div><div class="lbl">Experience</div></div>
+<div class="modal-kpi"><div class="num">2</div><div class="lbl">Subjects</div></div>
+</div>
+<h3>Overview</h3>
+<p>Online Mathematics and Science tutor at iStudy Indonesia, an education platform offering upskilling and career development programs for students.</p>
+<h3>Approach</h3>
+<ul>
+<li>Developed data-informed learning plans tailored to each student's strengths and weaknesses</li>
+<li>Applied performance tracking to monitor progress and adjust strategies</li>
+<li>Used adaptive teaching methods to strengthen analytical reasoning and problem-solving skills</li>
+<li>Drove consistent achievement of 90+ average assessment scores across all students</li>
+</ul>
+<div class="modal-tools"><span>Performance Tracking</span><span>Data-Driven Teaching</span><span>Mathematics</span><span>Science</span><span>Adaptive Learning</span></div>
+<h3>Documentation</h3>
+<div class="modal-gallery">
+<div class="ph">Tutoring Photo 1<br>assets/photos/tutor-1.jpg</div>
+<div class="ph">Tutoring Photo 2<br>assets/photos/tutor-2.jpg</div>
+</div>
+</div></div></div>
+
+<!-- VOLUNTEER MODAL -->
+<div class="modal-overlay" id="modal-volunteer" onclick="if(event.target===this)closeModal('volunteer')">
+<div class="modal">
+<button class="modal-close" onclick="closeModal('volunteer')">&times;</button>
+<div class="modal-header" style="background:#3B1F6E">
+<div class="project-tag tag-volunteer">Volunteering &bull; Community Service</div>
+<h2>Volunteering & Community Service</h2>
+<div class="org">Multiple Events &bull; 2025</div>
+</div>
+<div class="modal-body">
+<h3>KKN Community Service Program</h3>
+<p><strong>Jayapura, Papua &bull; 2025</strong></p>
+<p>Participated in the university's community service program (Kuliah Kerja Nyata) in Jayapura, Papua, running 5 educational and community development programs:</p>
+<ul>
+<li><strong>Elementary Math Tutoring</strong> &mdash; Taught foundational mathematics to elementary school students, building confidence in numerical skills</li>
+<li><strong>Junior High Math Tutoring</strong> &mdash; Delivered mathematics lessons for junior high school students, strengthening problem-solving abilities</li>
+<li><strong>UTBK Preparation (PK & PM)</strong> &mdash; Prepared senior high school students for university entrance exam (UTBK) in logical reasoning and mathematical potential sections</li>
+<li><strong>Sago Noodle Production Workshop</strong> &mdash; Facilitated hands-on training for local community members on processing sago into noodles, promoting local food innovation and economic empowerment</li>
+<li><strong>Talkshow: "Why Higher Education Matters"</strong> &mdash; Organized and presented a motivational talkshow for high school students about the importance of pursuing higher education</li>
+</ul>
+
+<h3>Tur Sama-Sama 2025</h3>
+<p><strong>May 2025</strong></p>
+<p>Welcomed and verified over 300 Golden Ticket holders, ensuring smooth VIP entry and enhancing the guest experience through professional and friendly front-line service.</p>
+
+<h3>Yogyakarta X Beauty 2025</h3>
+<p><strong>Partnership Volunteer &bull; Apr - May 2025</strong></p>
+<p>Built and maintained relationships with 63 media partners, driving event promotions. Developed strategies to enhance brand presence and worked with the ticketing team to ensure smooth entry for attendees.</p>
+
+<div class="modal-tools"><span>Community Service</span><span>Teaching</span><span>Event Management</span><span>Partnership</span><span>Public Speaking</span><span>Facilitation</span></div>
+<h3>Documentation</h3>
+<div class="modal-gallery">
+<div class="ph">KKN Photo 1<br>assets/photos/kkn-1.jpg</div>
+<div class="ph">KKN Photo 2<br>assets/photos/kkn-2.jpg</div>
+<div class="ph">KKN Photo 3<br>assets/photos/kkn-3.jpg</div>
+<div class="ph">Event Photo 1<br>assets/photos/event-1.jpg</div>
+<div class="ph">Event Photo 2<br>assets/photos/event-2.jpg</div>
+</div>
+</div></div></div>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-section"><div class="container">
+<div class="section-label">Expertise</div><h2 class="section-title">Skills & Tools</h2><p class="section-desc">Technical and professional competencies developed through academic study and hands-on experience.</p>
+<div class="skills-grid">
+<div class="skill-card fade-in"><h4>Data & Analytics</h4><div class="skill-items"><span>Python (pandas, matplotlib)</span><span>R</span><span>SQL</span><span>Excel (Advanced)</span><span>Data Visualization</span></div></div>
+<div class="skill-card fade-in"><h4>Statistical Methods</h4><div class="skill-items"><span>Linear Regression</span><span>Descriptive Statistics</span><span>Inferential Statistics</span><span>Data Cleaning</span><span>Data Validation</span></div></div>
+<div class="skill-card fade-in"><h4>Audit & Compliance</h4><div class="skill-items"><span>QA Review</span><span>WP Assessment</span><span>5C Framework</span><span>IPPF 2017</span><span>GIAS 2024</span></div></div>
+<div class="skill-card fade-in"><h4>Tools & Software</h4><div class="skill-items"><span>Microsoft Office Suite</span><span>Adobe InDesign</span><span>PowerPoint</span><span>LaTeX</span></div></div>
+<div class="skill-card fade-in"><h4>Professional</h4><div class="skill-items"><span>Stakeholder Communication</span><span>Cross-functional Collaboration</span><span>Project Management</span><span>Public Speaking</span></div></div>
+<div class="skill-card fade-in"><h4>Certifications</h4><div class="skill-items"><span>Employability Skills - Wadhwani (94%)</span><span>Pearson English B1+</span></div></div>
+</div></div></section>
+
+<!-- EDUCATION -->
+<section id="education"><div class="container">
+<div class="section-label">Background</div><h2 class="section-title">Education</h2><br>
+<div class="edu-card fade-in">
+<div class="edu-badge"><div class="year">2022</div><div class="dash">&mdash;</div><div class="year">2026</div></div>
+<div class="edu-info"><h3>Gadjah Mada University</h3><div class="degree">Bachelor of Science in Mathematics</div><p>Relevant Coursework: Statistics, Financial Mathematics, Optimization Methods, Stochastic Processes, Data Analysis</p><p>Grading Assistant: Calculus II & Multivariable Calculus I (2024), Calculus II & Complex Variable I (2025)</p><span class="gpa">GPA: 3.53 / 4.00</span></div>
+</div></div></section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+<h2>Let's Connect</h2><p>Open for Data Analyst, Business Analyst, and Audit Intern opportunities.</p>
+<div class="contact-links">
+<a href="mailto:cynthiamaretta@mail.ugm.ac.id">&#9993; Email</a>
+<a href="https://linkedin.com/in/cynthiamaretta" target="_blank">&#127760; LinkedIn</a>
+<a href="tel:+6282110828299">&#9742; +62 821-1082-8299</a>
+</div></section>
+
+<footer><p>&copy; 2025 Cynthia Maretta. Built with purpose.</p></footer>
+
+<script>
+function openModal(id){document.getElementById('modal-'+id).classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('active');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.active').forEach(m=>{m.classList.remove('active');document.body.style.overflow='';});});
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(e=>observer.observe(e));
+document.querySelectorAll('nav a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})})});
+</script>
+</body>
+</html>
